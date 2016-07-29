@@ -1,16 +1,16 @@
-# Just to glue it up in mind
+# Just to glue it up in the mind
 
-## ReactJS
+## React
 
-Used to render the view
-
-## React Bootstrap 
-
-Used to make view composition easier and more clear (`<Panel header="Hello">Content</Panel>` instead of five divs with several classes)
+Used to render and sync html effectively through the virtual DOM.
 
 ## Mobx and Mobx-React
 
-Used to store the state and propagate the state changes to the view automagically
+Used to store the state and propagate the state changes to the view automagically.
+
+## React Bootstrap 
+
+Used to make view composition easier and more clear (`<Panel header="Hello">Content</Panel>` instead of five divs with several classes).
 
 ## Typescript 
 
