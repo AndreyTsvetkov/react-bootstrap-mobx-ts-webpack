@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import {Block} from './Block';
+import {uiStore} from './Store';
 
 ReactDOM.render(
-	<div>Hello world</div>, 
+	<Block store={uiStore} />, 
 	document.getElementById('root')
 );
