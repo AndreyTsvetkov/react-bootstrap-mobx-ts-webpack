@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true, 
+        "strictNullChecks": true, 
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true, 
+        "jsx": "React", 
+        "noImplicitReturns": true, 
+        "noImplicitThis": true, 
+        "noUnusedLocals": true, 
+        "noUnusedParameters": true,
+        "target": "ES5"
+    },
+    "awesomeTypescriptLoaderOptions": {
+        /* ... */
+    }
+}

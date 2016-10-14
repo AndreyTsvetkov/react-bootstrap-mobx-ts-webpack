@@ -1,8 +1,7 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { observer } from 'mobx-react';
 import { Panel, Button } from 'react-bootstrap'; 
-import { IStore } from './Store';
+import { IStore } from '../Store';
 
 require<any>('./Block.less');
 
@@ -12,9 +11,7 @@ export class Block extends React.Component<{store: IStore}, {}> {
 		this.props.store.reset();
 
 	public render() {
-
 		const button = <Button onClick={this.onReset}>Reset</Button>
-
 		return (
 			<Panel className="Block" header="I am a React+MobX app"
 				footer={button}>

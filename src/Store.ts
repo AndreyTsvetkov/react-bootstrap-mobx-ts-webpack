@@ -13,8 +13,8 @@ class Store {
 	}
 
 	constructor() {
-		setInterval(() => this.value++, 1000);
+		setInterval(() => this.value += 10, 1000);
 	}
 }
 
-export const uiStore : IStore = new Store();
+export const uiStore: IStore = new Store();
