@@ -11,8 +11,5 @@
         "noUnusedLocals": true, 
         "noUnusedParameters": true,
         "target": "ES5"
-    },
-    "awesomeTypescriptLoaderOptions": {
-        /* ... */
     }
 }
