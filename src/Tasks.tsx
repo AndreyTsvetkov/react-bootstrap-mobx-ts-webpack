@@ -18,8 +18,10 @@ export class Tasks extends React.Component<Props, {}> {
     public render() {
         return ( 
             <Panel>
-                {this.props.store.tasks.map(task => (
-                    <div>task</div>
+                {this.props.store.tasks.map((task, index) => (
+                    <div key={index}>
+                        {task.name}: {task.timeTaken()}
+                    </div>
                 ))}
             </Panel>
         );
