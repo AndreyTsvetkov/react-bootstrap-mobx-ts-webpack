@@ -5,8 +5,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     context: __dirname,
     entry: {
-        bundle: './src/index' //, 
-            //test: './tests/test'
+        bundle: './src/index'
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
