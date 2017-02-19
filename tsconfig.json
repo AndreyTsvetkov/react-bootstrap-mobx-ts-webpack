@@ -1,15 +1,28 @@
 {
     "compilerOptions": {
-        "noImplicitAny": true,
-        "removeComments": true, 
-        "strictNullChecks": true, 
+        "module": "commonjs",
+        "removeComments": true,
+        "strictNullChecks": true,
         "experimentalDecorators": true,
-        "forceConsistentCasingInFileNames": true, 
-        "jsx": "React", 
-        "noImplicitReturns": true, 
-        "noImplicitThis": true, 
-        "noUnusedLocals": true, 
-        "noUnusedParameters": true,
-        "target": "ES5"
-    }
+        "emitDecoratorMetadata": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "noUnusedParameters": false,
+        "noUnusedLocals": false,
+        "forceConsistentCasingInFileNames": true,
+        "target": "ES5",
+        "jsx": "react",
+        "allowJs": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "require.d.ts"
+    ]
 }
