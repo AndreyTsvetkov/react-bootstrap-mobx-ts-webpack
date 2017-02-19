@@ -2,7 +2,6 @@ import * as React from 'react';
 import { action, observable, computed, autorun, reaction } from 'mobx';
 import { observer } from 'mobx-react';
 import { Panel, ButtonGroup, Button, Label, Row, Col, FormControl } from 'react-bootstrap';
-import { /*I{Entity}View*/ } from '../../Shared/Contracts';
 import { Store } from './Store';
 
 type Props = {
@@ -15,14 +14,22 @@ export class Tasks extends React.Component<Props, {}> {
         super(p);
     }
 
+    @action private newTaskNameChanged = (e: any) => 
+        this.newTaskName = e.target.value;
+    @observable private newTaskName = "";
+
     public render() {
         const header = (
             <Row>
-                <Col xs={11}><FormControl type="text" placeholder="Введите задачу" /></Col>
-                <Col xs={1}><Button>+</Button></Col>
+                <Col xs={11}>
+                    <FormControl type="text" placeholder="Введите задачу" value={this.newTaskName} onChange={this.newTaskNameChanged}/>
+                </Col>
+                <Col xs={1}>
+                    <Button>+</Button>
+                </Col>
             </Row>
         );
-        return ( 
+        return (
             <Panel header={header}>
                 {this.props.store.tasks.map((task, index) => (
                     <div key={index}>
