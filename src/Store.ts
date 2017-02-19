@@ -1,5 +1,11 @@
+import { action, observable } from 'mobx';
+
 export class Store {
-    public tasks: Task[] = [ new Task('task 1'), new Task('task 2') ];
+    @action public addNew = (name: string) => {
+        this.tasks.unshift(new Task(name));
+    }
+
+    @observable public tasks: Task[] = [];
 }
 
 export class Task {

@@ -18,6 +18,11 @@ export class Tasks extends React.Component<Props, {}> {
         this.newTaskName = e.target.value;
     @observable private newTaskName = "";
 
+    @action private onCreate = () => {
+        this.props.store.addNew(this.newTaskName);
+        this.newTaskName = '';
+    }
+
     public render() {
         const header = (
             <Row>
@@ -25,7 +30,7 @@ export class Tasks extends React.Component<Props, {}> {
                     <FormControl type="text" placeholder="Введите задачу" value={this.newTaskName} onChange={this.newTaskNameChanged}/>
                 </Col>
                 <Col xs={1}>
-                    <Button>+</Button>
+                    <Button onClick={this.onCreate}>+</Button>
                 </Col>
             </Row>
         );
