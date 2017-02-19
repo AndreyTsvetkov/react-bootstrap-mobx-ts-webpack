@@ -14,7 +14,7 @@ export class Tasks extends React.Component<Props, {}> {
         super(p);
     }
 
-    @action private newTaskNameChanged = (e: any) => 
+    @action private newTaskNameChanged = (e: any) =>
         this.newTaskName = e.target.value;
     @observable private newTaskName = "";
 
@@ -27,7 +27,7 @@ export class Tasks extends React.Component<Props, {}> {
         const header = (
             <Row>
                 <Col xs={11}>
-                    <FormControl type="text" placeholder="Введите задачу" value={this.newTaskName} onChange={this.newTaskNameChanged}/>
+                    <FormControl type="text" placeholder="Введите задачу" value={this.newTaskName} onChange={this.newTaskNameChanged} />
                 </Col>
                 <Col xs={1}>
                     <Button onClick={this.onCreate}>+</Button>
@@ -40,8 +40,8 @@ export class Tasks extends React.Component<Props, {}> {
                     <div key={index}>
                         {task.name}: {task.timeTaken()} {' '}
                         <ButtonGroup>
-                            { task.isRunning() && <Button>Stop</Button> }
-                            { !task.isRunning() && <Button>Start</Button> }
+                            {task.isRunning && <Button bsStyle="danger" onClick={task.stop}>Stop</Button>}
+                            {!task.isRunning && <Button bsStyle="success" onClick={task.start}>Start</Button>}
                         </ButtonGroup>
                     </div>
                 ))}

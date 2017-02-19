@@ -9,7 +9,18 @@ export class Store {
 }
 
 export class Task {
-    constructor (public name: string) {}
+    
+    constructor (public name: string) {
+
+    }
+
+    public start = () => {
+        this.isRunning = true;
+    }
+    public stop = () => {
+        this.isRunning = false;
+    }
+
     public timeTaken = () => "1m";
-    public isRunning = () => true;
+    @observable public isRunning = true;
 }
