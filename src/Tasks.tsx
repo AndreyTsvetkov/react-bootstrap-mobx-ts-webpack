@@ -16,6 +16,12 @@ export class Tasks extends React.Component<Props, {}> {
     }
 
     public render() {
-        return <div>hello world</div>;
+        return ( 
+            <Panel>
+                {this.props.store.tasks.map(task => (
+                    <div>task</div>
+                ))}
+            </Panel>
+        );
     }
 } 
