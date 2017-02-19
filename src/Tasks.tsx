@@ -38,7 +38,11 @@ export class Tasks extends React.Component<Props, {}> {
             <Panel header={header}>
                 {this.props.store.tasks.map((task, index) => (
                     <div key={index}>
-                        {task.name}: {task.timeTaken()}
+                        {task.name}: {task.timeTaken()} {' '}
+                        <ButtonGroup>
+                            { task.isRunning() && <Button>Stop</Button> }
+                            { !task.isRunning() && <Button>Start</Button> }
+                        </ButtonGroup>
                     </div>
                 ))}
             </Panel>

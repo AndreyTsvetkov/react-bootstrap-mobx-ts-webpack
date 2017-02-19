@@ -11,4 +11,5 @@ export class Store {
 export class Task {
     constructor (public name: string) {}
     public timeTaken = () => "1m";
+    public isRunning = () => true;
 }
