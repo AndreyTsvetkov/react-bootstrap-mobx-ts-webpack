@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { action, observable, computed, autorun, reaction } from 'mobx';
 import { observer } from 'mobx-react';
-import { Panel, ButtonGroup, Button, Label, Row, Col, FormControl } from 'react-bootstrap';
+import { Panel, ButtonGroup, Button, Label, Row, Col, FormControl, Table } from 'react-bootstrap';
 import { Store } from './Store';
 
 type Props = {
@@ -36,15 +36,19 @@ export class Tasks extends React.Component<Props, {}> {
         );
         return (
             <Panel header={header}>
-                {this.props.store.tasks.map((task, index) => (
-                    <div key={index}>
-                        {task.name}: {task.timeTaken} {' '}
-                        <ButtonGroup>
-                            {task.isRunning && <Button bsStyle="danger" onClick={task.stop}>Stop</Button>}
-                            {!task.isRunning && <Button bsStyle="success" onClick={task.start}>Start</Button>}
-                        </ButtonGroup>
-                    </div>
-                ))}
+                <Table striped hover>
+                    <tbody>
+                        {this.props.store.tasks.map((task, index) => (
+                            <tr key={index}>
+                                <td>{task.name}: {task.timeTaken}</td>
+                                <td>
+                                    {task.isRunning && <Button bsStyle="danger" onClick={task.stop}>Stop</Button>}
+                                    {!task.isRunning && <Button bsStyle="success" onClick={task.start}>Start</Button>}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
             </Panel>
         );
     }
