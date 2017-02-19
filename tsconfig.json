@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
         "removeComments": true,
         "strictNullChecks": true,
         "experimentalDecorators": true,

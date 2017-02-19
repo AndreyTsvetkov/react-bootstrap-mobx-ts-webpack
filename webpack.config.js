@@ -61,8 +61,8 @@ module.exports = {
                 to: path.join(__dirname, 'www', 'lib', 'react-bootstrap.js')
             },
             {
-                from: path.join(__dirname, 'node_modules', 'mobx', 'lib', 'mobx.min.js'),
-                to: path.join(__dirname, 'www', 'lib', 'mobx.min.js')
+                from: path.join(__dirname, 'node_modules', 'mobx', 'lib', 'mobx.umd.js'),
+                to: path.join(__dirname, 'www', 'lib', 'mobx.js')
             },
             {
                 from: path.join(__dirname, 'src', 'bootstrap.min.css'),
